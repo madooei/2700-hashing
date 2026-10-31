@@ -10,11 +10,8 @@ public final class StringHash {
   // Returns the polynomial hash of key in the given base, computed with
   // Horner's method. The result may be negative.
   public static int polynomialHash(String key, int base) {
-    int h = 0;
-    for (int i = 0; i < key.length(); i++) {
-      h = base * h + key.charAt(i);  // multiply by the base, then add
-    }
-    return h;
+    // TODO: Implement me
+    throw new UnsupportedOperationException("TODO: Implement me");
   }
 
   // Returns Java's built-in string hash, the polynomial hash in base 31. It
