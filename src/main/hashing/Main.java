@@ -1,9 +1,11 @@
 package hashing;
 
-/**
- * A short demo that hashes a few sample words and prints the results.
- */
-public class Main {
+/** A demo that hashes a few sample words and prints the results. */
+public final class Main {
+
+  private Main() {
+    // This class should not be instantiated!
+  }
 
   public static void main(String[] args) {
     String[] words = {"cat", "dog", "cow"};
