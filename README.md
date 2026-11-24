@@ -19,12 +19,13 @@ code/
     main/
       hashing/
         StringHash.java                 # polynomialHash, javaHash, djb2, fnv1a
-        Main.java                       # demo entry point: hashes a few words
+      demo/                             # one demo per class you implement
+        StringHashDemo.java
     test/
       hashing/
         StringHashTest.java             # known values for each hash
   scripts/
-    run.sh                              # compile and run the demo (hashing.Main)
+    run.sh                              # compile and run one demo
     test.sh                             # compile and run the JUnit tests
 ```
 
@@ -32,10 +33,10 @@ code/
 
 - `scripts/test.sh` — compiles everything and runs the full JUnit suite.
 - `scripts/test.sh hashing.StringHashTest` — compiles everything and runs only that test class.
-- `scripts/run.sh` — compiles everything and runs the `Main` demo.
+- `scripts/run.sh demo.StringHashDemo` — compiles everything and runs that one demo. Every class you implement has its own demo, `<Class>Demo`.
 
 ## What's here
 
 - `hashing.StringHash` — four string hash functions. Each one reads the string once and folds every character into one running `int`. They differ in their constants and in whether they mix a character in by adding or by XOR. The result is an `int`, so it can be negative.
-- `hashing.Main` — hashes `"cat"`, `"dog"`, and `"cow"` with the base-31 polynomial hash, then the anagrams `"CAB"` and `"ABC"`, then `"cat"` with DJB2 and FNV-1a.
 - `hashing.StringHashTest` — checks the traced values (`"CAB"` is `66468` and `"ABC"` is `64578`), checks that `javaHash` agrees with `String.hashCode`, checks the hash codes of the keys the notes store in their first table, and checks `djb2` and `fnv1a` against exact values, including the published FNV test vectors.
+- `demo.StringHashDemo` — hashes `"cat"`, `"dog"`, and `"cow"` with the base-31 polynomial hash, `"cat"` with `javaHash`, the anagrams `"CAB"` and `"ABC"`, and `"cat"` with DJB2 and FNV-1a.
