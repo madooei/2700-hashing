@@ -35,7 +35,7 @@ code/
 - `scripts/test.sh hashing.StringHashTest` — compiles everything and runs only that test class.
 - `scripts/run.sh demo.StringHashDemo` — compiles everything and runs that one demo. Every class you implement has its own demo, `<Class>Demo`.
 
-## What's here
+## Contents
 
 - `hashing.StringHash` — four string hash functions. Each one reads the string once and folds every character into one running `int`. They differ in their constants and in whether they mix a character in by adding or by XOR. The result is an `int`, so it can be negative.
 - `hashing.StringHashTest` — checks the traced values (`"CAB"` is `66468` and `"ABC"` is `64578`), checks that `javaHash` agrees with `String.hashCode`, checks the hash codes of the keys the notes store in their first table, and checks `djb2` and `fnv1a` against exact values, including the published FNV test vectors.
